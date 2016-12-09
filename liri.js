@@ -10,7 +10,7 @@ var request = require ("request");
 var action = process.argv[2];
 var value = process.argv[3];
 
-//-----random  and switch cases----
+//-----random and switch cases----
 function random(){
 	switch (action){
 		case 'my-tweets':
@@ -89,7 +89,7 @@ spotify.search({ type: 'track', query: value }, function(err, data) {
 
 //----do what it says-----
 function doWhatItSays() {
-	fs.readFile('./random.txt', "utf8", function(err, data){
+	fs.readFile('random.txt', "utf8", function(err, data){
 		if (err) {
 			console.log('error detail: ' +err);
 		}
