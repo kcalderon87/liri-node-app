@@ -38,7 +38,6 @@ function myTweets(){
 	var params = {screen_name: 'kimsos'};
 	client.get('statuses/user_timeline', params, function(error, tweets, response){
   		if (!error) {
-  			fs.appendFile('log.txt', "!!Last 20 Tweets!!" + '\n');
     	  	for (var i = 0; i < 20; i++) {
     	  		console.log('__Tweet: ' +tweets[i].text);
   			}		
@@ -88,4 +87,17 @@ spotify.search({ type: 'track', query: value }, function(err, data) {
  });
 }
 
+//----do what it says-----
+function doWhatItSays() {
+	fs.readFile('./random.txt', "utf8", function(err, data){
+		if (err) {
+			console.log('error detail: ' +err);
+		}
+		splitData = data.split(',');
+		action = splitData[0];
+		value = splitData[1];		
+		random();
+	});
+}
 
+random();
