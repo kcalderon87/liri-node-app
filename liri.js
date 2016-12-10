@@ -73,7 +73,7 @@ function movieThis() {
 
 //----spotify----
 function spotifySong() {
-var value = process.argv[3] || "the sign";
+var value = process.argv[3] || "The Sign by Ace of Base";
 spotify.search({ type: 'track', query: value }, function(err, data) {
     if ( err ) {
         console.log('error detail: ' + err);
