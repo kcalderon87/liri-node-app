@@ -2,9 +2,9 @@
 var keys = require('./keys.js');
 var fs = require('fs');
 
+var request = require ("request");
 var twitter = require('twitter');
 var spotify = require('spotify');
-var request = require ("request");
 
 //----argvs-----
 var action = process.argv[2];
@@ -39,12 +39,12 @@ function myTweets(){
 	client.get('statuses/user_timeline', params, function(error, tweets, response){
   		if (!error) {
     	  	for (var i = 0; i < 20; i++) {
-    	  		console.log('__Tweet: ' +tweets[i].text);
+    	  		console.log('__Tweet: ' + tweets[i].text);
   			}		
   		}  else {
   			console.log('error detail: ' + error);
   		}    	
-  		
+  		console.log(tweets);
 	});
 }
 
